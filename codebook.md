@@ -52,7 +52,7 @@ Train data files are described below. Equivalent Test data files having same pro
 * **SubjectID**: Subject identifier for each of the participants
 
 ### Cleaning and Normalizing Data
-The script 'run_analysis.R' transforms the original data into a specific tidy data set that includes only those features that have to do with the mean or standard deviation. The script itself follows the following steps:
+The script 'run_analysis.R' transforms the original data into a summary data set of mean by subject and activity.  The steps to complete this process are performed as follows:
 
 1. Read data from raw text files into data frames (data assumed to be downloaded prior to script execution)
 2. Merge test and train subject data.

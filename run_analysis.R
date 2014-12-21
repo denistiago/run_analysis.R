@@ -46,14 +46,12 @@ merge.xy <- cbind(subj, activity, merge.x)
 ## ---- get mean and stdv features
 merge.xy.stat <- merge.xy[ ,c(1, 2, grep('-mean|-std', colnames(merge.xy)))]
 
-
-View(merge.xy.stat)
-# compute means grouped by subject and activity
+## ---- compute means grouped by subject and activity
 melt.xy = melt(merge.xy.stat, id.var = c('subject', 'activity'))
 stat.mean = dcast(melt.xy , subject + activity ~ variable, mean)
 
-# Save the resulting dataset
-write.table(stat.mean, file="FinalData.txt")
+## ---- save the resulting dataset
+write.table(stat.mean, file="FinalData.txt", row.names = FALSE)
 
-# view the final dataset
+## ---- view the final dataset
 View(stat.mean)
